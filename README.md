@@ -1,67 +1,67 @@
-# SmartCart Customer Segmentation System
+# SmartCart Customer Clustering System
 
-An intelligent customer segmentation system for SmartCart, a growing e-commerce platform. This project uses unsupervised machine learning to group customers based on demographics, purchase behavior, and engagement metrics to enable personalized marketing and improve customer retention.
-
----
-
-## Problem Statement
-SmartCart currently applies generic marketing strategies for all customers, resulting in missed opportunities to retain high-value customers and delayed identification of churn-prone users. This system analyzes historical customer transaction data and creates meaningful clusters to support data-driven decision-making.
+**Live Demo:** [SmartCart Customer Segmentation App](https://smartcart-customer-segmentation-qlmeicj3ecusb9ckqhtexy.streamlit.app/)
 
 ---
 
-## Dataset
-- **Rows:** 2,240 customer records  
-- **Columns:** 22 attributes  
-- **Key Features:**
-  - Demographics: Year_Birth, Education, Marital_Status, Income, Kidhome, Teenhome
-  - Purchase Behaviour: MntWines, MntFruits, MntMeatProducts, MntFishProducts, MntSweetProducts, MntGoldProds
-  - Purchase Frequency: NumDealsPurchases, NumWebPurchases, NumCatalogPurchases, NumStorePurchases, NumWebVisitsMonth
-  - Feedback & Recency: Recency, Complain
+## Project Overview
+
+SmartCart is a growing e-commerce platform serving customers across multiple countries.  
+The company collected **2,240 customer records** with **22 features** including demographics, purchase behavior, website activity, and customer feedback.
+
+Currently, SmartCart uses **generic marketing strategies** for all customers, resulting in missed opportunities to retain high-value customers and delayed identification of churn-prone users.  
+
+This project implements a **customer segmentation system** using **KMeans clustering** to group customers into meaningful clusters for **personalized marketing and retention strategies**.
 
 ---
 
-## Approach
-1. **Data Preprocessing**
-   - Handle missing values
-   - Scale numerical features
-2. **Feature Engineering**
-   - Selected relevant purchase & engagement features
-3. **Clustering**
-   - Applied KMeans clustering
-   - Used Elbow Method and Silhouette Score to select optimal clusters
-4. **Cluster Analysis**
-   - Analyzed patterns in spending, engagement, and loyalty
+## Dataset Description
+
+- Each row represents a customer and contains multiple attributes:
+  - **Demographics:** Year_Birth, Education, Marital_Status, Income, Kidhome, Teenhome
+  - **Purchase Behavior (Amount):** MntWines, MntFruits, MntMeatProducts, MntFishProducts, MntSweetProducts, MntGoldProds
+  - **Purchase Behavior (Frequency):** NumDealsPurchases, NumWebPurchases, NumCatalogPurchases, NumStorePurchases, NumWebVisitsMonth
+  - **Customer Feedback & Constants:** Recency, Complain
+
+- Dataset used: `smartcart_customers.csv`
 
 ---
 
-## Results & Insights
-- Identified 4 customer segments:
-  1. High-value loyal customers
-  2. Bargain-focused frequent shoppers
-  3. Low engagement / churn-prone users
-  4. Moderate spenders with seasonal activity
-- Generated actionable insights for personalized marketing strategies
+## Features
 
----
-
-## Business Impact
-- Enables targeted marketing campaigns  
-- Improves customer retention  
-- Reduces churn and maximizes revenue from high-value customers
-
----
-
-## Tech Stack
-- Python, Pandas, NumPy, scikit-learn, Matplotlib, Streamlit  
-
----
-
-## Live Demo
-[SmartCart Customer Segmentation Dashboard](YOUR_DEPLOYED_LINK_HERE)
+- Handles **missing values** using median imputation  
+- Scales features using **StandardScaler**  
+- Implements **KMeans clustering** with adjustable number of clusters (K)  
+- Displays:
+  - Clustered dataset preview  
+  - Cluster distribution chart  
+  - Average spending per cluster  
+- Built with **Streamlit** for interactive analysis
 
 ---
 
 ## How to Run Locally
-1. Clone the repo:  
+
+1. Clone the repo:
+
 ```bash
 git clone https://github.com/UtkarshRepos/smartcart-customer-segmentation.git
+cd smartcart-customer-segmentation
+
+2.Install dependencies:
+
+pip install -r requirements.txt
+
+
+3. Run the Streamlit app:
+
+streamlit run app.py
+
+
+Upload smartcart_customers.csv in the app to start clustering.
+
+
+Live App
+
+You can explore the live app here:
+https://smartcart-customer-segmentation-qlmeicj3ecusb9ckqhtexy.streamlit.app/
